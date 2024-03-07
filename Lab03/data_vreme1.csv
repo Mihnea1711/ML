@@ -1,0 +1,15 @@
+Starea vremii,Temperatura,Umiditate,Vant,Joc
+Soare,Mare,Mare,Absent,Nu
+Soare,Mare,Mare,Prezent,Nu
+Innorat,Mare,Mare,Absent,Da
+Ploaie,Medie,Mare,Absent,Da
+Ploaie,Mica,Normala,Absent,Da
+Ploaie,Mica,Normala,Prezent,Nu
+Innorat,Mica,Normala,Prezent,Da
+Soare,Medie,Mare,Absent,Nu
+Soare,Mica,Normala,Absent,Da
+Ploaie,Medie,Normala,Absent,Da
+Soare,Medie,Normala,Prezent,Da
+Innorat,Medie,Mare,Prezent,Da
+Innorat,Mare,Normala,Absent,Da
+Ploaie,Medie,Mare,Prezent,Nu
