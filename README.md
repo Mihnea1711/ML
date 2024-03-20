@@ -14,6 +14,7 @@ Determine the optimal value of K, which yields compact and well-separated cluste
 
 ![k-means classification image](Lab01/kmeans1.png)
 
+
 ## Lab 2: Data Classification with K-Nearest Neighbors
 ### Introduction
 Data classification involves assigning elements to categories based on their features or attributes. K-Nearest Neighbors (KNN) is a popular classification algorithm that determines the class membership of a new element by considering the classes of its k nearest known neighbors. This lab explores both the basic KNN algorithm and its variant with weighted neighbors.
@@ -33,6 +34,7 @@ Validation: Conduct validation to identify the best value of k. Split the data i
 
 ![knn classification image](Lab02/my_points_weighted.png)
 
+
 ## Lab 3: Naive Bayes Classifier
 ### Introduction
 In this lab, I implemented a Naive Bayes classifier using Laplace correction for both categorical values and values from a continuous interval. The Naive Bayes classifier is based on the theorem developed by Thomas Bayes and aims to determine the probabilities of classifying a new instance into K classes based on the analysis of the features of instances with known classes.\
@@ -46,3 +48,36 @@ Additional Notes
 
 ### Additional Info
 For the second dataset, data_vreme2.csv, the temperature attribute contains numerical values. Therefore, a different approach is required for calculating probabilities, specifically for mean and standard deviation calculation. We utilized the probability density function of the normal distribution to determine probabilities based on temperature values for each class.
+
+
+## Lab 4: Decision Trees with ID3 Algorithm
+### Introduction
+Decision trees are hierarchical classification methods that organize attributes of data from a specific domain, with possible decisions (classes) at the bottom of the hierarchy. ID3 (Iterative Dichotomizer) decision trees order the attributes hierarchically based on the informational gain they provide for making decisions.
+
+### Implementation
+#### Algorithm Implementation:
+The ID3 algorithm generates decision trees by recursively selecting the attribute that maximizes the informational gain. This lab focuses on implementing the ID3 algorithm to build decision trees for classification tasks.
+
+#### Structure of the Decision Tree:
+- The root and intermediate nodes contain attributes, ordered by their decision-making importance.
+- Edges represent attribute values (or groups of values).
+- Each node has a number of descendants equal to the possible decisions starting from that node.
+
+#### Classification using Decision Trees:
+- Generate the decision tree from a training dataset. This dataset contains instances with known classes.
+- Traverse the tree for a new instance. This traversal involves repeatedly dividing the possible solutions based on attribute values of the instances until reaching a leaf node containing the class value assigned to the instance.
+
+#### Determining Classification Error:
+Calculate the classification error of the decision tree for a set of instances by comparing predicted classes with actual classes.
+
+### Additional Notes
+For decision tree generation, the importance order of attributes needs to be established (which attribute is the most important for making the first decision?). To determine the importance, the informational gain (IG) for each attribute is calculated. For the complete tree and any of its subtrees, the root node will contain the attribute that provides the highest IG.
+
+In the case of ID3 trees, IG is determined as the measure by which the entropy of the training data set is reduced following its division based on attribute values.
+
+### Requirements
+1. Generate a decision tree using the ID3 algorithm from the dataset provided in data_vreme3.csv. 
+2. Use the decision tree to classify instances from the data_vreme4.csv file.
+3. Determine the classification error rate of the decision tree for these instances.
+
+![id3 image](Lab04/id3.png)

@@ -104,11 +104,10 @@ if __name__ == '__main__':
     classification_errors = 0
     for index, instance in df_test.iterrows():
         predicted_class = classify_instance(root, instance)
-        actual_class = instance.iloc[-1]  # Clasa reală se găsește în ultima coloană
-        print("Instance:", instance.values[:-1])
+        actual_class = instance.iloc[-1]
+        print(f"Instance:", instance.values[:-1])
         print("Predicted class:", predicted_class)
         print("Actual class:", actual_class)
-        print()  # Adăugăm o linie goală pentru separare
         if predicted_class != actual_class:
             classification_errors += 1
     classification_error_rate = classification_errors / len(df_test)
