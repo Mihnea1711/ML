@@ -81,3 +81,25 @@ In the case of ID3 trees, IG is determined as the measure by which the entropy o
 3. Determine the classification error rate of the decision tree for these instances.
 
 ![id3 image](Lab04/id3.png)
+
+
+## Lab 5: Random Forest Classification
+### Introduction
+Random Forest is an ensemble learning method used for classification, regression, and other tasks. It operates by constructing a multitude of decision trees at training time and outputs the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees.
+
+### Implementation
+#### Algorithm Implementation:
+The Random Forest algorithm involves building multiple decision trees from randomly selected subsets of the training data. Each tree in the forest independently predicts the class of the input, and the final decision is made by aggregating the votes or predictions from all the trees.
+Building the Forest:
+    Generate a number of random subsets of the training data.
+    For each subset, randomly select a subset of attributes.
+    Build a decision tree using the selected subset of data and attributes.
+    Repeat steps 1-3 to create multiple trees forming the random forest.
+
+#### Classification with Random Forest:
+To classify new instances using the random forest:
+    Input the instance to each tree in the forest.
+    Aggregate the predictions from all trees (e.g., by voting) to determine the final class prediction.
+
+#### Error Calculation:
+Calculate the classification error of the random forest for a set of test instances by comparing the predicted classes with the actual classes.
