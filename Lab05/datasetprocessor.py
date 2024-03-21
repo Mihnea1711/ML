@@ -40,6 +40,16 @@ class DatasetProcessor:
             gini += p**2
         return 1 - gini
 
+    # entropia subsetului de date corespunzatoare lui A
+    def getSubsetGini(self, A):
+        overall_gini = 1
+        for val in self.getAttribValues(A):
+            subset = self.getSubset(A, val)
+            subsetProbability = len(subset) / self.instanceCount
+            subsetLabelProbability = subset[self.className].value_counts(normalize=True)
+            overall_gini -= subsetProbability * sum(p ** 2 for p in subsetLabelProbability)
+        return overall_gini
+
     # o submultime a setului de date, generata aleator
     def generateRandomSubset(self):
         count = random.randint(2, self.instanceCount-1)

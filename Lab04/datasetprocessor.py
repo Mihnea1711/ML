@@ -41,3 +41,14 @@ class DatasetProcessor:
             entropy -= p * math.log2(p) if p > 0 else 0
         return entropy
 
+    # entropia subsetului de date corespunzatoare lui A
+    def getSubsetEntropy(self, A):
+        overall_entropy = 0
+        for val in self.getAttribValues(A):
+            subset = self.getSubset(A, val)
+            subsetProbability = len(subset) / self.instanceCount
+            subsetLabelProbability = subset[self.className].value_counts(normalize=True)
+            subsetEntropy = sum(-p * math.log2(p) for p in subsetLabelProbability)
+            overall_entropy += subsetProbability * subsetEntropy
+        return overall_entropy
+

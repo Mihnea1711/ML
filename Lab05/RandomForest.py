@@ -41,25 +41,17 @@ def BuildTree(ds, branchName, attribList):
         node.name = dp.getLabelWithMaxCount()
         return node
 
-    # cautam atr cu indice gini minim
-    minGini = float('inf')
-    bestAttribute = None
-    for attribute in attribList:
-        attributeGini = dp.getGini()
-        if attributeGini < minGini:
-            minGini = attributeGini
-            bestAttribute = attribute
-
-    node.name = bestAttribute
-    Avalues = dp.getAttribValues(bestAttribute)
+    A = min(attribList, key=lambda x: dp.getSubsetGini(x))
+    node.name = A
+    Avalues = dp.getAttribValues(A)
 
     for val in Avalues:
-        subset = dp.getSubset(bestAttribute, val)
+        subset = dp.getSubset(A, val)
 
         if len(subset) == 0:
             node.children.append(Node(name=dp.getLabelWithMaxCount()))
         else:
-            newAttribList = [attr for attr in attribList if attr != bestAttribute]
+            newAttribList = [attr for attr in attribList if attr != A]
             node.children.append(BuildTree(subset, val, newAttribList))
 
     return node
@@ -132,8 +124,8 @@ if __name__ == '__main__':
 #2 ---------------------------------------------------------
     _ds = pd.read_csv('data_vreme3.csv')
 
-    _num_subsets = 10  # nr subm aleatoare
-    _num_trees = 5  # nr arbori in padure
+    _num_subsets = 5  # nr subm aleatoare
+    _num_trees = 3  # nr arbori in padure
     _forest = generateForest(_ds, _num_subsets, _num_trees)
 
     # constr lista de atr pt fiec arbore

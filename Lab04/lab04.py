@@ -50,7 +50,7 @@ def ID3(df, branchName, attribList):
         return node
 
     # Alegem atributul cu entropia minima
-    A = min(attribList, key=lambda x: dp.getEntropy()) # atributul cu entropia minima
+    A = min(attribList, key=lambda x: dp.getSubsetEntropy(x)) # atributul cu entropia minima
     node.name = A
     Avalues = dp.getAttribValues(A)  # valorile posibile ale atributului A
 
