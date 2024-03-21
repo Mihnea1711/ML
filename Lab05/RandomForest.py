@@ -3,7 +3,9 @@ from datasetprocessor import *
 from sklearn.metrics import accuracy_score
 
 class Node:
-    def __init__(self, name='root', branchName='', children=[]):
+    def __init__(self, name='root', branchName='', children=None):
+        if children is None:
+            children = []
         self.name = name
         self.branchName = branchName
         self.children = children.copy()
@@ -11,7 +13,6 @@ class Node:
 
 def printNode(node, parentStrLen=0):
     indent = ' ' * parentStrLen
-    nodeStr = ''
     if node.branchName == '':  # root node
         nodeStr = node.name
         print(indent, nodeStr)
@@ -28,8 +29,7 @@ def BuildTree(ds, branchName, attribList):
 
     node = Node()
     node.branchName = branchName
-
-    dp = DatasetProcessor(ds_train)
+    dp = DatasetProcessor(ds)
 
     # daca toate instantele din ds au aceeasi clasa, atunci
     if len(dp.classLabels) == 1:
@@ -91,6 +91,7 @@ def BuildTreeWithAttributes(ds, attribList):
 
 # fct pt gen padure
 def generateForest(ds, num_subsets, num_trees):
+    dp = DatasetProcessor(ds)
     forest = []
     for _ in range(num_subsets):
         subset = dp.generateRandomSubset()
@@ -119,9 +120,9 @@ if __name__ == '__main__':
     # make predictions
     correct_predictions = 0
     total_instances = len(ds_test)
-    for _, instance in ds_test.iterrows():
-        prediction = predict(root, instance)
-        if prediction == instance[_dp.className]:
+    for _, _instance in ds_test.iterrows():
+        prediction = predict(root, _instance)
+        if prediction == _instance[_dp.className]:
             correct_predictions += 1
 
     # calc classification err
@@ -129,31 +130,30 @@ if __name__ == '__main__':
     print("Classification error:", classification_error)
 
 #2 ---------------------------------------------------------
-    ds = pd.read_csv('data_vreme3.csv')
-    dp = DatasetProcessor(ds)
+    _ds = pd.read_csv('data_vreme3.csv')
 
-    num_subsets = 10  # nr subm aleatoare
-    num_trees = 5  # nr arbori in padure
-    forest = generateForest(ds, num_subsets, num_trees)
+    _num_subsets = 10  # nr subm aleatoare
+    _num_trees = 5  # nr arbori in padure
+    _forest = generateForest(_ds, _num_subsets, _num_trees)
 
     # constr lista de atr pt fiec arbore
     attributes_list = []
-    for tree in forest:
-        attributes_list.append(tree.name)
+    for _tree in _forest:
+        attributes_list.append(_tree.name)
 
     # det pred pt fiec ex din setul de test
     predictions = []
-    for _, instance in ds_test.iterrows():
+    for _, _instance in ds_test.iterrows():
         votes = []
-        for tree in forest:
-            prediction = predict(tree, instance)
+        for _tree in _forest:
+            prediction = predict(_tree, _instance)
             votes.append(prediction)
         # pred are cele mai multe voturi
         final_prediction = max(set(votes), key=votes.count)
         predictions.append(final_prediction)
 
     # calc err de clasif pt padure
-    accuracy_forest = accuracy_score(ds_test[dp.className], predictions)
+    accuracy_forest = accuracy_score(ds_test[_dp.className], predictions)
     print("Eroare de clasificare pentru padurea de arbori:", accuracy_forest)
 
 
