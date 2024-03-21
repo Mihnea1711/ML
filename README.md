@@ -103,3 +103,5 @@ To classify new instances using the random forest:
 
 #### Error Calculation:
 Calculate the classification error of the random forest for a set of test instances by comparing the predicted classes with the actual classes.
+
+![random forest image](Lab05/random_forest.png)
