@@ -105,3 +105,47 @@ To classify new instances using the random forest:
 Calculate the classification error of the random forest for a set of test instances by comparing the predicted classes with the actual classes.
 
 ![random forest image](Lab05/random_forest.png)
+
+
+## Lab 6: Gradient Descent Method
+### Introduction
+The Gradient Descent Method is an iterative algorithm commonly used for approximate optimization problems, especially when minimizing an objective function. Optimization involves finding the best solution to a given problem (optimal solution). The solution is formulated in terms of the values ​​of some parameters of a method/system, aiming to identify the parameter values ​​that lead to optimality. Often, the optimization problem is formulated as a minimization problem of a function that describes unwanted behavior or state of the system under consideration. In such cases, finding the optimal solution means identifying the parameter values ​​that minimize a function describing the error, cost, or losses within that system. The main idea of gradient descent is to gradually adjust the parameter values ​​in the opposite direction of the gradient vector, with the aim of "descending" in the function's domain towards a minimum point.
+
+### Implementation
+#### Gradient Descent Algorithm:
+Implement the Gradient Descent algorithm to minimize various functions. The lab provides examples of functions along with their analytical derivatives or approximate gradients using finite differences.
+
+#### Visualization:
+Visualize the steps of the Gradient Descent algorithm on the graphs of the functions being minimized.
+
+#### Convergence Criteria:
+Apply a convergence criteria described in the documentation at each use of the Gradient Descent algorithm.
+
+#### Finding Global Minimum:
+For each function, determine the global minimum and graphically represent the steps of Gradient Descent.
+
+#### Multiple Starting Points:
+In some cases, finding the global minimum may require applying Gradient Descent from multiple initial points, randomly generated or evenly distributed in the function's domain.
+
+### Tasks
+1. **Function:** \( f(x) = x^4 - tx^3 + 14x^2 - 8x \), \( f:[-0.2, 4] \)
+   - Use the analytical derivative.
+
+    ![ex1 3d plot](Lab06/pics/ex1.png)
+
+
+2. **Function:** \( f(x) = \frac{{\sin(\sqrt{x})}}{x} \), \( f: [1, 40] \rightarrow \mathbb{R} \)
+   - Use the approximate derivative by finite differences.
+   
+   ![ex2 3d plot](Lab06/pics/ex2.png)
+
+3. **Function:** \( f(x, y) = x^4 + 2x^2y -21x^2 + 2xy^2 - 14x + y^4 - 16y^2 - 22y + 170 \), \( f: [-4, 4]^2 \rightarrow \mathbb{R} \)
+   - Use the analytical gradient.
+
+   ![ex3 3d plot](Lab06/pics/ex3_3d.png)
+
+4. **Function:** \( f(x, y) = (1 - x^2 - y^3) \cdot e^{\left(-\frac{x^2 - y^2}{2}\right)} \)
+   - Use the approximate gradient by finite differences.
+
+   ![ex4 3d plot](Lab06/pics/ex4_3d.png)
+
