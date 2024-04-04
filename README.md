@@ -149,3 +149,41 @@ In some cases, finding the global minimum may require applying Gradient Descent 
 
    ![ex4 3d plot](Lab06/pics/ex4_3d.png)
 
+## Lab 7: Linear Regression and Polynomial Regression
+### Introduction
+Linear regression is a fundamental statistical technique used for modeling the relationship between a dependent variable and one or more independent variables. It assumes a linear relationship between the variables, represented by a straight line in two dimensions. Polynomial regression extends linear regression to model nonlinear relationships by fitting a polynomial equation to the data.
+
+### Linear Regression
+Linear regression aims to find the best-fitting straight line through the data points. The line is represented by the equation: y=b0+b1∗xy=b0​+b1​∗x, where b0b0​ is the intercept and b1b1​ is the slope of the line. The coefficients b0b0​ and b1b1​ are determined to minimize the sum of squared differences between the observed and predicted values of the dependent variable.
+
+### Polynomial Regression
+Polynomial regression fits a polynomial equation to the data, allowing for curved relationships between the variables. The polynomial equation is of the form: y=b0+b1∗x+b2∗x2+...+bn∗xny=b0​+b1​∗x+b2​∗x2+...+bn​∗xn, where nn is the degree of the polynomial. Higher degrees result in more flexible models that can capture complex patterns in the data.
+
+### Implementation
+#### Linear Regression:
+    Implement linear regression for the given dataset.
+    Calculate the coefficients analytically using the normal equation method.
+    Calculate the coefficients using the gradient descent method and compare the results.
+
+#### Polynomial Regression:
+    Implement polynomial regression for degrees 2 to 8.
+    Determine the mean squared error (MSE) for each polynomial function.
+    Identify the polynomial that provides the best fit to the data based on the lowest MSE.
+
+### Tasks
+    Linear Regression:
+        Determine the coefficients b0b0​ and b1b1​ using both analytical and gradient descent methods.
+        Calculate the mean squared error (MSE) for each method.
+    Polynomial Regression:
+        Implement polynomial regression for degrees 2 to 8.
+        Calculate the MSE for each polynomial function.
+        Identify the polynomial with the lowest MSE as the best fit for the data.
+
+### Visualization
+    Plot the original data points along with the linear regression line obtained analytically.
+    Plot the linear regression line obtained using the gradient descent method.
+    Plot the polynomial functions of degrees 2 to 8 and highlight the one with the lowest MSE as the best fit.
+
+![analitic_regression plot](Lab07/regr_analitic.png)
+![gradient_descend_regr plot](Lab07/regr_grad_descend.png)
+![polinomial_plot](Lab07/regr_polinomial.png)
