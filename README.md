@@ -187,3 +187,46 @@ Polynomial regression fits a polynomial equation to the data, allowing for curve
 ![analitic_regression plot](Lab07/regr_analitic.png)
 ![gradient_descend_regr plot](Lab07/regr_grad_descend.png)
 ![polinomial_plot](Lab07/regr_polinomial.png)
+
+## Lab 8: Logistic Regression
+### Introduction
+Logistic regression is a fundamental technique used for binary classification tasks, where the goal is to predict the probability of an instance belonging to a particular class. Unlike linear regression, which predicts continuous values, logistic regression models the probability of the binary outcome using the logistic function (also known as the sigmoid function). The logistic function maps any real-valued number into the range [0, 1], making it suitable for modeling probabilities.
+
+### Logistic Regression Algorithm
+The logistic regression algorithm models the probability P(Y=1∣X)P(Y=1∣X), where Y is the binary outcome variable and X is the input feature vector. 
+The logistic function σ(z) is defined as: σ(z)=1/(1+e^(−z)), where z is a linear combination of the input features and model coefficients: z=w0+w1x1+w2x2+…+wnxn
+Here, w0,w1,…,wn​ are the model coefficients (weights), and x1,x2,…,xn​ are the input features.
+
+### Implementation
+#### Algorithm Overview:
+Initialize model coefficients w0,w1,…,wnw0​,w1​,…,wn​ with random values.
+Compute the linear combination zz for each instance using the current coefficients.
+Apply the logistic function σ(z)σ(z) to obtain the predicted probabilities.
+Update the coefficients using gradient descent to minimize the cross-entropy loss function.
+Repeat steps 2-4 until convergence or for a fixed number of iterations.
+
+### Tasks
+Implement logistic regression for binary classification.
+Use the cross-entropy loss function as the objective function to be minimized.
+Update the model coefficients using gradient descent.
+Evaluate the performance of the logistic regression model on a separate test dataset.
+Visualize the decision boundary and the probability distribution of the predicted classes.
+
+### Error Calculation
+#### Cross-Entropy (Task 1)
+To evaluate the performance of the logistic regression model, we calculate the classification error using the cross-entropy loss function. The cross-entropy loss is defined as:
+![cross_entropy](Lab08/cross-entropy.png)
+where:
+xi is the number of instances, 
+yi​ is the true label (0 or 1),  
+hat(yi)​ is the predicted probability of the positive class for the i-th instance.
+
+#### Using Mean Squared Error (Task 2)
+In addition to cross-entropy loss, logistic regression models can also be evaluated using mean squared error (MSE). MSE measures the average squared difference between the true labels and the predicted probabilities. While cross-entropy loss is more commonly used for logistic regression, MSE can provide insights into the model's performance from a different perspective.
+
+### Results:
+#### Using Cross-Entropy for error calculation:
+![cross_entropy](Lab08/p1.png)
+
+#### Using MSE for error calculation:
+![cross_entropy](Lab08/p2.png)
