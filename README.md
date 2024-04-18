@@ -230,3 +230,45 @@ In addition to cross-entropy loss, logistic regression models can also be evalua
 
 #### Using MSE for error calculation:
 ![cross_entropy](Lab08/p2.png)
+
+## Lab 9: Data Classification using simple neural networks
+### Introduction
+In this laboratory session, we delve into the classification task using simple neural networks. Neural networks are computational models inspired by the structure and function of biological neural networks. Simple neural networks, also known as feedforward neural networks, consist of an input layer, one or more hidden layers, and an output layer. Each layer contains neurons (or units) interconnected by weighted edges.
+
+### Implementation
+#### Algorithm Overview:
+1. **Model Architecture**: 
+   Define the architecture of a simple neural network with an input layer, one or more hidden layers, and an output layer. The number of neurons in each layer and the activation functions can be customized based on the problem domain.
+2. **Forward Pass**: 
+   Perform a forward pass to compute the output of the neural network given an input.
+3. **Backpropagation**: 
+   Use backpropagation to compute the gradients of the loss function with respect to the model parameters (weights and biases). Update the parameters using gradient descent or its variants (e.g., Adam optimizer).
+4. **Training**: 
+   Train the neural network using labeled training data. Iterate over the dataset multiple times (epochs), adjusting the model parameters to minimize the loss function.
+5. **Evaluation**: 
+   Evaluate the performance of the trained model on a separate validation or test dataset. Compute metrics such as accuracy, precision, recall, and F1-score to assess classification performance.
+
+### Tasks
+1. **Data Preparation**: Load and preprocess the dataset for classification. Split the data into training and testing sets.
+2. **Model Definition**: Define the architecture of a simple neural network using PyTorch or a similar deep learning framework.
+3. **Training**: Train the neural network using the training dataset. Adjust hyperparameters such as learning rate and the number of epochs.
+4. **Evaluation**: Evaluate the trained model on the testing dataset. Compute classification metrics to assess performance.
+5. **Hyperparameter Tuning**: Experiment with different hyperparameter settings to optimize the performance of the neural network.
+
+#### Custom Cross Validation:
+- **Implementation**: 
+  Develop a custom cross-validation function that partitions the dataset into multiple folds (e.g., 5-fold or 10-fold cross-validation). Test the neural network on each fold while holding out the remaining folds for training. Aggregate the evaluation metrics (e.g., accuracy) across all folds to obtain an overall assessment of the model's performance.
+- **Benefits**: 
+  Custom cross-validation provides a more robust estimate of the model's performance compared to a single train-test split. It reduces the risk of overfitting to a specific training-validation split and provides insights into the variability of the model's performance across different subsets of the data.
+
+### Additional Notes
+- Consider techniques such as dropout regularization, batch normalization, and early stopping to improve the generalization and performance of the neural network.
+- Visualize the training and validation metrics (e.g., loss curves, accuracy curves) to analyze the training process and identify potential issues (e.g., overfitting).
+
+### Results
+- Provide insights into the performance of the trained neural network, including accuracy, precision, recall, and F1-score.
+- Analyze the impact of hyperparameters on model performance and suggest potential improvements.
+
+![img 1](Lab09/ex1.png)
+![img 2](Lab09/ex3.png)
+![img 3](Lab09/ex5.png)
