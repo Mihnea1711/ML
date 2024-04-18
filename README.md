@@ -269,6 +269,6 @@ In this laboratory session, we delve into the classification task using simple n
 - Provide insights into the performance of the trained neural network, including accuracy, precision, recall, and F1-score.
 - Analyze the impact of hyperparameters on model performance and suggest potential improvements.
 
-![img 1](Lab09/ex1.png)
-![img 2](Lab09/ex3.png)
-![img 3](Lab09/ex5.png)
+<img src="Lab09/ex1.png" alt="img 1" width="330">
+<img src="Lab09/ex3.png" alt="img 2" width="300" height="180">
+<img src="Lab09/ex5.png" alt="img 3" width="300">
