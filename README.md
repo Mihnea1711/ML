@@ -272,3 +272,41 @@ In this laboratory session, we delve into the classification task using simple n
 <img src="Lab09/ex1.png" alt="img 1" width="330">
 <img src="Lab09/ex3.png" alt="img 2" width="300" height="180">
 <img src="Lab09/ex5.png" alt="img 3" width="300">
+
+## Lab 10: Convolutional Neural Networks (CNNs) for Image Classification
+### Introduction
+In this lab, we explore Convolutional Neural Networks (CNNs), a class of deep neural networks well-suited for image classification tasks. CNNs are inspired by the visual cortex's organization in animals and consist of multiple layers of neurons that learn hierarchical representations of image features.
+
+### Implementation
+#### Model Architecture
+Define a CNN architecture suitable for image classification tasks. A typical CNN architecture consists of convolutional layers, pooling layers, and fully connected layers. Experiment with different architectures, varying the number of layers, filter sizes, and activation functions to optimize performance.
+
+#### Data Preprocessing
+Preprocess the image data by resizing them to a standard size, normalizing pixel values, and augmenting the dataset with techniques like rotation, flipping, and scaling to improve model generalization.
+
+#### Training
+Train the CNN model on a labeled dataset of images. Utilize techniques such as mini-batch gradient descent, learning rate scheduling, and dropout regularization to optimize training and prevent overfitting.
+
+#### Evaluation
+Evaluate the trained CNN model on a separate test dataset to assess its performance. Compute metrics such as accuracy, precision, recall, and F1-score to measure classification performance. Visualize classification results and confusion matrices to gain insights into the model's behavior.
+
+### Tasks
+1. **Dataset Selection**: Choose an appropriate dataset for image classification, such as CIFAR-10, MNIST, or a custom dataset relevant to the problem domain.
+2. **Model Definition**: Define the architecture of the CNN model using a deep learning framework like TensorFlow or PyTorch.
+3. **Data Preprocessing**: Preprocess the image data, including resizing, normalization, and augmentation.
+4. **Training**: Train the CNN model on the training dataset, monitoring performance metrics and adjusting hyperparameters as needed.
+5. **Evaluation**: Evaluate the trained model on the test dataset, computing classification metrics and visualizing results.
+6. **Fine-Tuning**: Experiment with hyperparameters, model architectures, and optimization techniques to improve classification performance.
+
+### Additional Notes
+- Experiment with transfer learning by using pre-trained CNN models such as VGG, ResNet, or Inception as feature extractors and fine-tuning them on the target dataset.
+- Utilize techniques like data augmentation, dropout regularization, and batch normalization to improve model generalization and robustness.
+- Visualize learned features in CNN layers using techniques like activation maximization or feature visualization to gain insights into what the model has learned.
+
+### Results
+- Provide insights into the performance of the CNN model, including accuracy, precision, recall, and F1-score on the test dataset.
+- Analyze the impact of hyperparameters, model architectures, and optimization techniques on classification performance.
+- Visualize classification results, confusion matrices, and learned features to interpret the model's behavior and identify areas for improvement.
+
+<img src="Lab10/imgs/p1-3.png" alt="img 1-3" width="330">
+<img src="Lab10/imgs/p5.png" alt="img 5" width="300" height="180">
