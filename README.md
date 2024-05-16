@@ -310,3 +310,66 @@ Evaluate the trained CNN model on a separate test dataset to assess its performa
 
 <img src="Lab10/imgs/p1-3.png" alt="img 1-3" width="330">
 <img src="Lab10/imgs/p5.png" alt="img 5" width="300" height="180">
+
+## Lab 12: Recommender Systems and Matrix Factorization
+### Introduction
+In this lab, we explore different types of Recommender Systems (RS), focusing on collaborative filtering techniques to predict user preferences for items. RS are algorithms designed to suggest relevant items to users by analyzing patterns in user-item interactions. We will implement user-based and item-based collaborative filtering methods, and use matrix factorization to estimate missing ratings in a rating matrix.
+
+### Implementation
+#### User-Based Collaborative Filtering
+
+User-based collaborative filtering estimates the missing rating for a user-item pair based on the similarity between the target user and other users who have rated the same item. Similarity is calculated using Pearson correlation.
+
+#### Item-Based Collaborative Filtering
+Item-based collaborative filtering estimates the missing rating based on the similarity between items. Similarity is calculated using cosine similarity between item rating vectors.
+
+#### Matrix Factorization
+Matrix factorization decomposes the user-item rating matrix into two lower-dimensional matrices. These matrices represent latent features of users and items. The product of these matrices approximates the original rating matrix, allowing us to estimate missing ratings.
+
+### Tasks
+ 1. Pearson Correlation for User-Based Collaborative Filtering
+   - Objective: Estimate the missing rating for Alice for Item5 using user-based collaborative filtering.
+   - Method: Calculate the Pearson correlation between Alice and other users who have rated Item5, and use these similarities to predict Alice's rating.
+
+ 2. Cosine Similarity for Item-Based Collaborative Filtering
+   - Objective: Estimate the missing rating for Alice for Item5 using item-based collaborative filtering.
+   - Method: Calculate the cosine similarity between Item5 and other items rated by Alice, and use these similarities to predict Alice's rating.
+
+ 3. Matrix Factorization
+   - Objective: Estimate all missing ratings in a given rating matrix using matrix factorization.
+   - Method: Decompose the rating matrix into two lower-dimensional matrices using gradient descent, and reconstruct the matrix to estimate missing values.
+
+### User-Based Collaborative Filtering
+Calculation of Pearson Correlation
+   - Define the rating matrix with known and unknown ratings.
+   - Calculate the Pearson correlation coefficient between Alice and other users who rated Item5.
+   - Estimate Alice's rating for Item5 using the weighted sum of the ratings from similar users.
+
+### Item-Based Collaborative Filtering
+Calculation of Cosine Similarity
+   - Transform the rating matrix to focus on items.
+   - Calculate the cosine similarity between Item5 and other items rated by Alice.
+   - Estimate Alice's rating for Item5 using the weighted sum of the ratings for similar items.
+
+### Matrix Factorization
+1. Initialization
+   - Initialize two matrices, U (user matrix) and V (item matrix), with random values.
+   - Set parameters: number of latent features (K), learning rate (alpha), regularization term (beta), and number of iterations.
+
+2. Gradient Descent
+   - Define the error function to measure the difference between the known ratings and the estimated ratings.
+   - Compute gradients for U and V and update their values iteratively to minimize the error.
+
+3. Reconstruction
+   - Reconstruct the rating matrix by multiplying U and V.
+   - Estimate the missing ratings using the reconstructed matrix.
+
+### Results
+   - Present the estimated rating for Alice for Item5 using both Pearson correlation and cosine similarity.
+   ![k-means classification image](Lab12/images/p11.png)
+   ![k-means classification image](Lab12/images/p12.png)
+
+   - Provide the complete rating matrix after matrix factorization, showing the estimated values for all missing ratings.
+   ![k-means classification image](Lab12/images/p2.png)
+
+   - Analyze the impact of different parameters (e.g., number of latent features, learning rate) on the performance of matrix factorization.
