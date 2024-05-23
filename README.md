@@ -366,10 +366,59 @@ Calculation of Cosine Similarity
 
 ### Results
    - Present the estimated rating for Alice for Item5 using both Pearson correlation and cosine similarity.
-   ![k-means classification image](Lab12/images/p11.png)
-   ![k-means classification image](Lab12/images/p12.png)
+   ![rating 1](Lab12/images/p11.png)
+   ![rating 2](Lab12/images/p12.png)
 
    - Provide the complete rating matrix after matrix factorization, showing the estimated values for all missing ratings.
-   ![k-means classification image](Lab12/images/p2.png)
+   ![rating 3](Lab12/images/p2.png)
 
    - Analyze the impact of different parameters (e.g., number of latent features, learning rate) on the performance of matrix factorization.
+  
+## Lab 13: Implementing and Training an LSTM-based Text Prediction Model
+### Overview
+In this laboratory, we implemented a simple Recurrent Neural Network (RNN) using Long Short-Term Memory (LSTM) layers for text prediction. The goal was to train the RNN model on a given text dataset and evaluate its accuracy. Additionally, we explored different hyperparameters to achieve the best possible performance.
+
+### Tasks
+#### Task 1: Implement the RNN Model
+I started by defining a simple RNN model using PyTorch. The model consists of an LSTM layer and a fully connected output layer.
+    Model Definition: The model was defined in the SimpleRNN class, which inherits from nn.Module.
+        LSTM Layer: This layer processes the input sequences and maintains the hidden states.
+        Output Layer: This layer maps the hidden state of the LSTM to the desired output size (vocabulary size).
+
+#### Task 2: Preprocess the Data
+I processed the provided text file to prepare it for training:
+   Text Normalization: Converted text to lowercase and separated punctuation by spaces.
+   Vocabulary Building: Created a vocabulary of unique words from the text.
+   Label Encoding: Encoded words as integer labels based on their index in the vocabulary.
+   Sequence Generation: Generated input sequences and corresponding target words for training.
+
+#### Task 3: Train the RNN Model
+I trained the RNN model using the generated sequences:
+   Hyperparameters:
+      Number of epochs: 250
+      Learning rate: 0.001 (later adjusted)
+      LSTM layer size: 32 (later adjusted)
+      Number of LSTM layers: 3 (later adjusted)
+   Loss Function: Used CrossEntropyLoss to measure the performance.
+   Optimizer: Used Adam optimizer for training.
+
+During training, we monitored the loss and accuracy at the end of each epoch to evaluate the model's performance.
+
+#### Task 4: Evaluate the Model
+We evaluated the model by generating predictions based on input sequences provided by the user. The model predicted the next word in the sequence, and this process continued to generate a sentence of a desired length.
+
+#### Task 5: Modify Hyperparameters
+We experimented with different hyperparameters to achieve better accuracy:
+   Increased the number of epochs to 750.
+   Adjusted the learning rate to 0.0002.
+   Changed the LSTM layer size to 64.
+   Increased the number of LSTM layers to 4.
+   Adjusted the sequence length to 5 for training.
+
+#### Task 6: Utilize GPU for Training
+We leveraged GPU (if available) to accelerate training:
+   Checked for CUDA availability.
+   Moved the model and data tensors to the GPU using torch.device.
+   Ensured all operations during training and prediction utilized the GPU.
+
+![training process image](Lab13/results.png)
